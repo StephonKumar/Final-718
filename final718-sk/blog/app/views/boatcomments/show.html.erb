@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @boatcomment.user %>
+</p>
+
+<p>
+  <strong>Comment:</strong>
+  <%= @boatcomment.comment %>
+</p>
+
+<p>
+  <strong>Boat:</strong>
+  <%= @boatcomment.boat %>
+</p>
+
+<%= link_to 'Edit', edit_boatcomment_path(@boatcomment) %> |
+<%= link_to 'Back', boatcomments_path %>

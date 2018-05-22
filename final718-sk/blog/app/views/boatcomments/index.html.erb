@@ -1,0 +1,141 @@
+<p id="notice"><%= notice %></p>
+<!---NAV-->
+<nav class="top-bar topbar-responsive">
+  <div class="top-bar-title">
+    <span data-responsive-toggle="topbar-responsive" data-hide-for="medium">
+      <button class="menu-icon" type="button" data-toggle></button>
+    </span>
+    <a class="topbar-responsive-logo" href="#"><strong>Final</strong></a>
+  </div>
+  <div id="topbar-responsive" class="topbar-responsive-links">
+    <div class="top-bar-right">
+      <ul class="menu simple vertical medium-horizontal">
+        <li><a href="#">Moter Yachts</a></li>
+        <li><a href="#">Sportfish</a></li>
+        <li><a href="#">Experience</a></li>
+        <li><a href="#">Request</a></li>
+        <li><a href="#">Our Story</a></li>
+        <li><a href="#">Find a Dealer</a></li>
+        <li><a href="#">Inventory</a></li>
+        <li>
+          <button type="button" class="button hollow topbar-responsive-button">Categories</button>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+<!---NAV END-->
+
+<!--HERO-->
+<div class="hero-section">
+  <div class="hero-section-text">
+  </div>
+</div>
+
+
+
+
+<!--HERO END-->
+
+<!--HERO_2 BEGIN-->
+<div class="card-info success">
+  <div class="card-info-label">
+    <div class="card-info-label-text">
+      Boat
+    </div>
+  </div>
+  <div class="card-info-content">
+    <h1 style="text-align: center;">MOTOR YACHTS</h1>
+    <h5 style="text-align: center; padding-top: 15px; font-size: 20px;">VISIONARY DESIGN BEYOND EXPECTATIONS</h5>
+    <p style="text-align: center; font-size: 15px;">On the bow of a Hatteras yacht, adventure lines the horizon and inhibitions are left in your wake. Through 60 years of signature innovation and design, Hatteras has crafted a legacy to which all others aspire. Every yacht utilizes bold form to merge indoor and outdoor spaces for ample entertainment areas, while skylights and windows bring cavernous staterooms to life. From their maiden voyage to every journey thereafter, Hatteras yachts deliver on the promise of a life without limits.</p>
+
+  </div>
+</div>
+
+
+
+<!--HERO_2 END-->
+
+<!--CONTENT-->
+<div class="marketing-site-content-section">
+  <div class="marketing-site-content-section-img">
+    <img src="https://www.yachtingmagazine.com/sites/yachtingmagazine.com/files/styles/1000_1x_/public/images/2017/10/hatteras-m90-panacera-salon.jpg?itok=eQ5JuLys&fc=50,50" alt="" />
+  </div>
+  <div class="marketing-site-content-section-block">
+    <h3 class="marketing-site-content-section-block-header">EXPERIENCE THE M90 PANACERA</h3>>
+    <a href="#" class="round button small">TAKE THE VIRTUAL TOUR</a>
+  </div>
+
+  <div class="marketing-site-content-section-block small-order-2 medium-order-1">
+    <h3 class="marketing-site-content-section-block-header">CRAFTSMANSHIP WITHOUT COMPARISON</h3>
+
+    <a href="#" class="round button small">THE PANACERA DESIGN</a>
+  </div>
+  <div class="marketing-site-content-section-img small-order-1 medium-order-2">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOX-12d-Z-xY8ktOxunEA-EvaMotBYEB1R-fSjbM_cXMDzhZXmwQ" alt="" />
+  </div>
+</div>
+
+<div class="marketing-site-content-section">
+  <div class="marketing-site-content-section-img">
+    <img src="http://imt.boatwizard.com/images/1/87/8/5848708_20160623075838521_1_XLARGE.jpg" alt="" />
+  </div>
+  <div class="marketing-site-content-section-block">
+    <h3 class="marketing-site-content-section-block-header">FOLLOW OUR WAKE</h3>
+    <a href="#" class="round button small">CRUISES AND EVENTS</a>
+  </div>
+
+</div>
+
+<!--END CONTENT-->
+
+<!-- CONTENT_2 BEGIN-->
+<div class="product-card">
+  <div class="product-card-thumbnail">
+    <a href="#"><img src="https://placehold.it/180x180"/></a>
+  </div>
+  <h2 class="product-card-title"><a href="#">Product Name</a></h2>
+  <span class="product-card-desc">Product Description</span>
+  <span class="product-card-price">$9.99</span><span class="product-card-sale">$12.99</span>
+  <div class="product-card-colors">
+    <button href="#" class="product-card-color-option"><img src="https://placehold.it/30x30"/></button>
+    <button href="#" class="product-card-color-option"><img src="https://placehold.it/30x30"/></button>
+    <button href="#" class="product-card-color-option"><img src="https://placehold.it/30x30"/></button>
+    <button href="#" class="product-card-color-option"><img src="https://placehold.it/30x30"/></button>
+  </div>
+</div>
+
+
+<!-- CONTENT_2 END-->
+
+<h1>Boatcomments</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Comment</th>
+      <th>Boat</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @boatcomments.each do |boatcomment| %>
+      <tr>
+        <td><%= boatcomment.user %></td>
+        <td><%= boatcomment.comment %></td>
+        <td><%= boatcomment.boat %></td>
+        <td><%= link_to 'Show', boatcomment %></td>
+        <td><%= link_to 'Edit', edit_boatcomment_path(boatcomment) %></td>
+        <td><%= link_to 'Destroy', boatcomment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Boatcomment', new_boatcomment_path %>
